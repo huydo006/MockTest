@@ -5,8 +5,15 @@ public class Order {
     private double distanceKm;
 
     public Order(double weight , double distanceKm) {
-        this.weight= weight;
-        this.distanceKm= distanceKm;
+        if(weight < 0 ){
+            throw new RuntimeException("Weight can not be less than 0");
+        }
+        if (distanceKm <0){
+            throw new RuntimeException("Distance can not be less than 0");
+        }
+        else
+            this.weight= weight;
+            this.distanceKm= distanceKm;
     }
 
     public double getDistanceKm() {
